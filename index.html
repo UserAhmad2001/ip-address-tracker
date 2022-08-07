@@ -5,70 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="stylesheet" href="./assets/style.css">
+<link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css"/>
+<script src="./node_modules/leaflet/dist/leaflet.js" ></script>
+
 </head>
 <body>
 
-  <div class="header">
-    <h1>
-      IP Address Tracker
-    </h1>
-    <div class="address">
-      <input type="text" placeholder="Search for any IP address or domain">
-      <span><img src="./assets/images/icon-arrow.svg" alt="arrow icon"></span>
+<div class="header">
+  <h1 class="title">
+    IP Address Tracker
+  </h1>
+  <div class="address">
+    <input class="ip-field" type="text" required placeholder="Search for any IP address or domain">
+    <span class="ip-search-btn"><img src="./assets/images/icon-arrow.svg" alt="arrow icon"></span>
+  </div>
+
+  <div class="address-info">
+    <div class="address-info-item">
+      <p>IP Address</p>
+      <h1 class="ip">193.728.469.846</h1>
     </div>
 
-    <div class="address-info">
-      <div class="address-info-item">
-        <p>IP Address</p>
-        <h1>193.728.469.846</h1>
-      </div>
+    
+    <div class="address-info-item">
+      <p>Location</p>
+      <h1 class="location">Brooklyn, NY</h1>
+    </div>
 
-      
-      <div class="address-info-item">
-        <p>Location</p>
-        <h1>193.728.469.846</h1>
-      </div>
+    <div class="address-info-item">
+      <p>Timezone</p>
+      <h1 class="timezone">UTC-5:00</h1>
+    </div>
 
-      <div class="address-info-item">
-        <p>Timezone</p>
-        <h1>193.728.469.846</h1>
-      </div>
-
-      <div class="address-info-item">
-        <p>ISP</p>
-        <h1>193.728.469.846</h1>
-      </div>
-
+    <div class="address-info-item">
+      <p>ISP</p>
+      <h1 class="isp">SpaceX Starlink</h1>
+    </div>
 
     </div>
   </div>
   
 
-<div class="map">
-  
+<div id="map" style="height: 100%;">
 </div>
 
 
-  
-  
-  
-  
-  
 
 
 
-
-
-
-
-
+<!-- 
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
   Coded by <a href="#">Your Name Here</a>.
-</div>
+</div> -->
 
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+<script src="./assets/index.js" type="text/javascript"></script>
 </body>
 </html>

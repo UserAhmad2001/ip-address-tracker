@@ -3,7 +3,24 @@
     "leaflet": "^1.8.0"
   },
   "devDependencies": {
-    "axios": "^0.27.2",
     "sass": "^1.54.3"
-  }
+  },
+  "name": "ip-address-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass scss:assets --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UserAhmad2001/ip-address-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UserAhmad2001/ip-address-tracker/issues"
+  },
+  "homepage": "https://github.com/UserAhmad2001/ip-address-tracker#readme",
+  "description": ""
 }
