@@ -24,7 +24,7 @@ function updateMap(lo, la) {
     }).addTo(map);
 
     var myIcon = L.icon({
-        iconUrl: './images/icon-location.svg',
+        iconUrl: 'https://github.com/UserAhmad2001/ip-address-tracker/blob/main/assets/images/icon-location.svg',
         iconSize: [32, 38],
         iconAnchor: [22, 94],
         popupAnchor: [-3, -76],
