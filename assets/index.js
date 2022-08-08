@@ -16,25 +16,31 @@ lat = position.coords.latitude
 updateMap(long,lat)
 }
 function updateMap(lo, la) {
+    console.log(lo, la);
     map.setView([lo, la], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    L.marker([lo, la]).addTo(map)
-        .bindPopup('Here you are.<br>Found you😊!')
-        .openPopup();
+    var myIcon = L.icon({
+        iconUrl: '../assets/images/icon-location.svg',
+        iconSize: [32, 38],
+        iconAnchor: [22, 94],
+        popupAnchor: [-3, -76],
+    });
+    
+    L.marker([lo, la], {icon: myIcon}).addTo(map);
 }
 
 ip_field.addEventListener('keypress',ev=>{
     if(ev.key === 'Enter' && ip_field.value !== ''){
-        callAPI(ip_field.value)
+        callAPI(ip_field.value.replace(/\s/g,''))
     }
 })
 document.querySelector('.ip-search-btn').addEventListener('click',ev=>{
     if(ip_field.value !== ''){
-        callAPI(ip_field.value)
+        callAPI(ip_field.value.replace(/\s/g,''))
     }
 })
 function callAPI(ip){
@@ -53,13 +59,27 @@ function callAPI(ip){
             alert('Something went wrong!')
         })
 }
+function setLongLat(ip){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '9cbb95a928msh2821046b9963db6p18054djsn98224f99e3f9',
+            'X-RapidAPI-Host': 'ip-to-location1.p.rapidapi.com'
+        }
+    };
+    
+    fetch(`https://ip-to-location1.p.rapidapi.com/myip?ip=${ip}`, options)
+        .then(response => response.json())
+        .then(response => updateMap(response.geo.ll[0],response.geo.ll[1]))
+        .catch(err => alert('Something went wrong!😢'));
+}
 function parseAPICallResults(res) {
     console.log(res);
     document.querySelector('.ip').innerHTML = res.ip;
     document.querySelector('.location').innerHTML = res.location.region + ' ' + res.location.country;
     document.querySelector('.timezone').innerHTML = 'UTC' + res.location.timezone;
     document.querySelector('.isp').innerHTML = res.isp;
-    updateMap(res.location.longitude, res.location.latitude);
+    setLongLat(res.ip)
 }
 
 

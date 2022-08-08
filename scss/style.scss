@@ -16,6 +16,8 @@ body,html{
 
     .header{
         background-image: url(../assets/images/pattern-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -25,7 +27,7 @@ body,html{
         
         .title{
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .address{
@@ -68,7 +70,7 @@ body,html{
             background-color: white;
             transform: translateY(-50%);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             color: black;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.318);
             width: 75%;
@@ -77,8 +79,10 @@ body,html{
             border-radius: .5rem;
 
             .address-info-item{
-                width: 25%;
-                padding-left: 2rem;
+                width: 14rem;
+                padding-right: 2rem;
+                padding-left: 1rem;
+                margin-block: 1rem;
 
                 &:not(:last-child){
                     border-right: 1px solid $dark-grey1;
@@ -119,3 +123,5 @@ body,html{
 
 
 }
+
+@import './media';
