@@ -24,7 +24,7 @@ function updateMap(lo, la) {
     }).addTo(map);
 
     var myIcon = L.icon({
-        iconUrl: '../assets/images/icon-location.svg',
+        iconUrl: './images/icon-location.svg',
         iconSize: [32, 38],
         iconAnchor: [22, 94],
         popupAnchor: [-3, -76],
