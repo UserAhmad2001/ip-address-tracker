@@ -23,14 +23,9 @@ function updateMap(lo, la) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    var myIcon = L.icon({
-        iconUrl: 'https://github.com/UserAhmad2001/ip-address-tracker/blob/main/assets/images/icon-location.svg',
-        iconSize: [32, 38],
-        iconAnchor: [22, 94],
-        popupAnchor: [-3, -76],
-    });
-    
-    L.marker([lo, la], {icon: myIcon}).addTo(map);
+    L.marker([lo, la]).addTo(map)
+    .bindPopup('Found You 😍')
+    .openPopup();
 }
 
 ip_field.addEventListener('keypress',ev=>{
